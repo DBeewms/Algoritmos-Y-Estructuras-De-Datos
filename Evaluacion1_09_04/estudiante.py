@@ -9,21 +9,13 @@ class Estudiante:
     def agregar_calificacion(self, nota):
         if 100 >= nota >= 0:
             self.calificaciones.append(nota)
-            self.promedio = self.promedio()
         else:
             print("La nota debe estar entre 0 y 100.")
 
-    
+
     def promedio(self):
-        sumatoria = 0
-        numero_calificaciones = len(self.calificaciones)
-        
-        if numero_calificaciones > 0:
-            
-            for i in range(numero_calificaciones):
-                self.calificaciones[i] += sumatoria
-            
-            return sumatoria / numero_calificaciones
+        if len(self.calificaciones) > 0:
+            return sum(self.calificaciones) / len(self.calificaciones)
         else:
             return 0
     
